@@ -1,0 +1,9 @@
+{
+    "name": "playground",
+    "version": "1.0.0",
+    "description": "Este projeto serve para experimentar o Node.",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "author": "Jhonata Medeiros da Silva"
+}
