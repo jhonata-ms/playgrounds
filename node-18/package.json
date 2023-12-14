@@ -3,7 +3,12 @@
     "version": "1.0.0",
     "description": "Este projeto serve para experimentar o Node.",
     "scripts": {
-        "start": "node src/index.js"
+        "start": "node src/index.js",
+        "kafka-producer-start": "node src/kafkajs-producer.js"
     },
-    "author": "Jhonata Medeiros da Silva"
+    "author": "Jhonata Medeiros da Silva",
+    "dependencies": {
+        "kafkajs": "^2.2.4"
+    },
+    "license": "UNLICENSED"
 }
