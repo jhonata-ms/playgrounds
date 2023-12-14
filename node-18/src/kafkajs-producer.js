@@ -1,6 +1,6 @@
 // Este código conecta ao kafka, e produz uma mensagem com data e hora no tópico.
 
-const kafka_broker = 'kafka:9093';
+const kafka_broker = 'broker1:9092';
 const kafka_topic = 'meu.topico.aqui';
 const message = 'Mensagem enviada do kafkajs em ' + new Date().toLocaleString('pt-br', {
     hour12: false,
