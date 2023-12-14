@@ -1,4 +1,4 @@
-// Este código conecta ao kafka, e produz uma mensagem no tópico com data em hora.
+// Este código conecta ao kafka, e produz uma mensagem com data e hora no tópico.
 
 const kafka_broker = 'kafka:9093';
 const kafka_topic = 'meu.topico.aqui';
