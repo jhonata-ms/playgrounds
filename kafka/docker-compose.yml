@@ -12,11 +12,29 @@ services:
     container_name: broker1
     image: confluentinc/cp-kafka:latest
     environment:
+      # O endereço do zookeeper.
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       # Essa variável é utilizada para especificar os endereços (hostnames e portas)
-      # aos quais os clientes Kafka (produtores e consumidores) devem se conectar,
-      # para que acessem o broker Kafka.
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker1:9092
+      # aos quais os clientes Kafka (produtores e consumidores) podem se conectar.
+      # INSIDE://broker1:9092 para acesso de dentro da rede kafka-network.
+      # OUTSIDE://localhost:9093 para acesso da máquina host do desenvolvedor.
+      # Outros endereços podem ser criados, de acordo com a necessidade.
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://broker1:9092,OUTSIDE://localhost:9093
+      # Quando temos mais de um listener, os protocolos não podem ter o mesmo nome na
+      # declaração da variável KAFKA_ADVERTISED_LISTENERS. Por este motivo, inventamos
+      # os nomes INSIDE e OUTSIDE (você pode por o nome que quiser), que diz a finalidade
+      # de cada listener, e aqui na KAFKA_LISTENER_SECURITY_PROTOCOL_MAP dizemos em qual
+      # protocolo ela vai transportar os dados: SSL ou PLAINTEXT
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      # Explicação da variável KAFKA_INTER_BROKER_LISTENER_NAME
+      # Define qual listener usar para comunicação entre os brokers.
+      # Brokers Kafka comunicar-se entre si, geralmente na rede interna
+      # (por exemplo, Docker network, AWS VPC, etc). O host/IP deve ser
+      # acessível para outros brokers. Isso é equivalente à configuração
+      # no arquivo de propriedades do servidor.
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+    ports:
+      - "9093:9093"
     networks:
       - kafka-network
     depends_on:
