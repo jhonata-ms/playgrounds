@@ -1,5 +1,5 @@
 {
-    "name": "Java 17",
+    "name": "Java & Maven",
     "build": {
         "dockerfile": "Dockerfile"
     },
