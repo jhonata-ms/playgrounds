@@ -1,0 +1,14 @@
+version: '3'
+name: camunda
+services:
+  camunda:
+    container_name: camunda
+    image: camunda/camunda-bpm-platform:run-latest
+    ports:
+      - "8084:8080"
+    networks:
+      - camunda-network
+networks:
+  camunda-network:
+    driver: bridge
+    name: camunda-network
