@@ -1,0 +1,12 @@
+{
+    "name": "SpringBoot",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "mounts": [
+        "source=/Users/jhonata/.m2,target=/root/.m2,type=bind,consistency=cached"
+    ]
+}
