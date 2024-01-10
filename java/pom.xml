@@ -14,12 +14,14 @@
     </properties>
     <dependencies>
         
+        <!-- Dependências do Commons Text -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
             <version>1.9</version>
         </dependency>
 
+        <!-- Dependências do Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -36,6 +38,13 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.4.14</version>
+        </dependency>
+
+        <!-- Dependência do Reactor  -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.6.1</version>
         </dependency>
     </dependencies>
 </project>
