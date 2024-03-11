@@ -1,0 +1,14 @@
+{
+    "name": "Python - Módulos e Pacotes",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // Habilita o botão de play para os scripts python.
+                "ms-python.python"
+            ]
+        }
+    }
+}
