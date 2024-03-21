@@ -7,11 +7,10 @@
         "source=/Users/jhonata/.m2,target=/root/.m2,type=bind,consistency=cached"
     ],
     "customizations": {
-		"vscode": {
-			"extensions": [
-				"Pivotal.vscode-boot-dev-pack",
-				"vscjava.vscode-java-pack"
-			]
-		}
-	}
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    }
 }
