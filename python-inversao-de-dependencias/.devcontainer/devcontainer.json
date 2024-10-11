@@ -1,0 +1,14 @@
+{
+    "name": "Python - Inversão de Dependências",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // Habilita o botão de play para os scripts python.
+                "ms-python.python"
+            ]
+        }
+    }
+}
